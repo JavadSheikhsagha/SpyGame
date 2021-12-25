@@ -2,47 +2,68 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#C5CED8"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#CAD1E2"
     tools:context=".TimerActivity">
 
 
-    <com.asp.fliptimerviewlibrary.CountDownClock
-        app:layout_constraintVertical_bias=".2"
-        android:id="@+id/timerProgramCountdown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:clipChildren="false"
-        android:clipToPadding="false"
-        app:almostFinishedCallbackTimeInSeconds="20"
-        app:animationDuration="850"
-        app:countdownTickInterval="1000"
-        app:digitDividerColor="@color/transparent"
-        app:digitPadding="2dp"
-        app:digitTextColor="@color/black"
-        app:digitTextSize="24sp"
-        app:digitWidth="28dp"
-        app:halfDigitHeight="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/volume"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="328dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/shape_playerbackground7"
+        app:layout_constraintBottom_toTopOf="@+id/gifImageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:resetSymbol="7"
-        app:splitterPadding="0dp" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/volume" />
 
     <Button
         android:id="@+id/btn_finish"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:text="نمایش نتیجه"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="16dp"
-        app:cornerRadius="8dp"
+        android:backgroundTint="#070F21"
         android:paddingVertical="8dp"
-        />
+        android:text="نمایش نتیجه"
+        android:textColor="#cad1e2"
+        android:textSize="18sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="24dp" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginBottom="1dp"
+        android:src="@drawable/sandclock"
+        app:layout_constraintBottom_toTopOf="@+id/timetext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.806" />
+
+    <TextView
+        android:id="@+id/timetext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="182dp"
+        android:background="@drawable/shape_playerbackground4"
+        android:padding="5dp"
+        android:text="TextView"
+        android:textColor="#3e3e3e"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_finish"
+        app:layout_constraintEnd_toEndOf="@+id/gifImageView"
+        app:layout_constraintStart_toStartOf="@+id/gifImageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +26,7 @@ class MainActivity : AppCompatActivity() {
          var time = findViewById<TextView>(R.id.timing)
 
         citiIncrease.setOnClickListener{
-            if (citizenCounter<7){
+            if (citizenCounter<10){
                 citizenCounter ++
                 citizenNumber.setText(citizenCounter.toString())
             }
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         spyIncrease.setOnClickListener {
-            if (spyCounter<3){
+            if (spyCounter<4){
                 spyCounter ++
                 spyNumber.setText(spyCounter.toString())
             }
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
         timeIncrease.setOnClickListener {
-            if (timeRemain<10){
+            if (timeRemain<15){
                 timeRemain ++
                 time.setText(timeRemain.toString())
             }
@@ -70,6 +71,10 @@ class MainActivity : AppCompatActivity() {
             })
         }
 
+        findViewById<ImageView>(R.id.info).setOnClickListener {
+            startActivity(Intent(this,InfoActivity::class.java))
+            finish()
+        }
 
     }
 }

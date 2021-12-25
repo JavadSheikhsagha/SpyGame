@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C5CED8"
+    android:background="#CAD1E2"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_weight="1"
-            android:background="@drawable/shape_playerbackground">
+            android:background="@drawable/shape_playerbackground2">
 
             <TextView
                 android:id="@+id/textView"
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="شهروند"
-                android:textColor="@color/black"
+                android:textColor="#cad1e2"
                 android:textSize="22sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageView"
                 app:layout_constraintStart_toStartOf="@+id/imageView"
@@ -43,29 +43,36 @@
                 android:layout_height="130dp"
                 android:layout_marginTop="12dp"
                 android:src="@drawable/img_player"
+                android:tint="#cad1e2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <TextView
                 android:id="@+id/cd"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape_playerbackground5"
                 android:gravity="center"
                 android:text="-"
-                android:textColor="@color/black"
-                android:textSize="32sp"
+                android:textColor="#cad1e2"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/citizenNumber"
                 app:layout_constraintEnd_toStartOf="@+id/citizenNumber"
                 app:layout_constraintTop_toTopOf="@+id/citizenNumber" />
 
             <TextView
                 android:id="@+id/ci"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/shape_playerbackground5"
                 android:gravity="center"
                 android:text="+"
-                android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textColor="#cad1e2"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/citizenNumber"
                 app:layout_constraintStart_toEndOf="@+id/citizenNumber"
                 app:layout_constraintTop_toTopOf="@+id/citizenNumber" />
 
@@ -77,7 +84,8 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="12dp"
                 android:text="3"
-                android:textSize="50dp"
+                android:textColor="#cad1e2"
+                android:textSize="40dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="جاسوس"
-                android:textColor="@color/black"
+                android:textColor="#cad1e2"
                 android:textSize="22sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageView2"
                 app:layout_constraintStart_toStartOf="@+id/imageView2"
@@ -119,24 +127,30 @@
 
             <TextView
                 android:id="@+id/si"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/shape_playerbackground5"
                 android:gravity="center"
                 android:text="+"
-                android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textColor="#cad1e2"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/spyNumber"
                 app:layout_constraintStart_toEndOf="@+id/spyNumber"
                 app:layout_constraintTop_toTopOf="@+id/spyNumber" />
 
 
             <TextView
                 android:id="@+id/sd"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape_playerbackground5"
                 android:gravity="center"
                 android:text="-"
-                android:textColor="@color/black"
-                android:textSize="32sp"
+                android:textColor="#cad1e2"
+                android:textSize="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/spyNumber"
                 app:layout_constraintEnd_toStartOf="@+id/spyNumber"
                 app:layout_constraintTop_toTopOf="@+id/spyNumber" />
 
@@ -147,11 +161,13 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="12dp"
                 android:text="1"
-                android:textSize="50dp"
+                android:textColor="#cad1e2"
+                android:textSize="40dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView2"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -161,23 +177,27 @@
 
     <LinearLayout
 
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.491"
+        tools:layout_editor_absoluteX="0dp">
 
         <TextView
             android:id="@+id/td"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="8dp"
-            android:textSize="32sp"
-            android:textColor="@color/black"
+            android:background="@drawable/shape_playerbackground4"
             android:gravity="center"
             android:text="-"
+            android:textColor="#070F21"
+            android:textSize="32dp"
             app:layout_constraintTop_toTopOf="@+id/timing" />
 
 
@@ -187,19 +207,21 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="8dp"
             android:text="4"
-            android:textSize="50dp"
+            android:textColor="#070F21"
+            android:textSize="40dp"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <TextView
             android:id="@+id/ti"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="8dp"
+            android:background="@drawable/shape_playerbackground4"
             android:gravity="center"
-            android:textSize="24sp"
-            android:textColor="@color/black"
             android:text="+"
+            android:textColor="#070F21"
+            android:textSize="22sp"
             app:layout_constraintTop_toTopOf="@+id/timing" />
 
         <TextView
@@ -208,12 +230,12 @@
             android:layout_gravity="center_vertical"
             android:layout_marginHorizontal="8dp"
             android:text="زمان بازی:"
-            android:textColor="@color/black"
+            android:textColor="#070F21"
             android:textSize="22sp" />
 
         <ImageView
             android:layout_width="64dp"
-            android:layout_height="64dp"
+            android:layout_height="39dp"
             android:layout_marginHorizontal="8dp"
             android:src="@drawable/img_clock" />
 
@@ -223,14 +245,56 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="36dp"
+        android:backgroundTint="#070F21"
+        android:paddingHorizontal="38dp"
         android:paddingVertical="16dp"
         android:text="شروع"
         android:textSize="18sp"
-        app:layout_constraintVertical_bias=".7"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.418" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:srcCompat="@drawable/city" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="28dp"
+        android:background="@drawable/shape_playerbackground6"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.32"
+        app:srcCompat="@drawable/rate" />
+
+    <ImageView
+        android:id="@+id/info"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="257dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="27dp"
+        android:background="@drawable/shape_playerbackground6"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/info" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

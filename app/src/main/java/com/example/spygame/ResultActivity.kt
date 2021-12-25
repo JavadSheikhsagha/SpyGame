@@ -15,12 +15,12 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        findViewById<TextView>(R.id.txtResult).text = "کلمه مورد نظر ${LOCATION} است."
+        findViewById<TextView>(R.id.txtResult).text = "مکان : ${LOCATION}"
         findViewById<TextView>(R.id.txtSpy).apply {
             var spyText = ""
             RevealActivity.playerList.forEachIndexed { index, player ->
                 if (player.type == PlayerType.SPY)
-                    spyText += "بازیکن شماره ${index + 1} جاسوس است.\n"
+                    spyText += "بازیکن شماره ${index + 1} \n"
             }
             text = spyText
         }
