@@ -6,14 +6,22 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.viewpager2.widget.ViewPager2
+import com.example.spygame.databinding.ActivityMainBinding
+import com.example.spygame.databinding.ActivityWalktroughBinding
 
 class MainActivity : AppCompatActivity() {
      var citizenCounter = 3
      var spyCounter = 1
      var timeRemain = 4
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
          var citiIncrease = findViewById<TextView>(R.id.ci)
          var citiDecrease = findViewById<TextView>(R.id.cd)

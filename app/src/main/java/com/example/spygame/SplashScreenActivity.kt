@@ -6,18 +6,20 @@ import android.os.Bundle
 import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
-import org.w3c.dom.Text
+import android.content.SharedPreferences
+import android.R.attr.repeatMode
+import androidx.compose.runtime.key
+
 
 class SplashScreenActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         setContentView(R.layout.activity_splash_screen)
-
         fun View.blink(
             times: Int = Animation.INFINITE,
             duration: Long = 528L,
@@ -35,9 +37,19 @@ class SplashScreenActivity : AppCompatActivity() {
         }
         var tap = findViewById<TextView>(R.id.tap)
         tap.blink()
+
+
+        val walktrough_key = "WALKTHROUGH"
+        val prefs = getSharedPreferences(walktrough_key, MODE_PRIVATE)
+
         findViewById<ConstraintLayout>(R.id.parent).setOnClickListener {
-            startActivity(Intent(this,MainActivity::class.java))
-            finish()
+            if (!prefs.getBoolean("has_passed",false)) {
+                startActivity(Intent(this, Walkthrough::class.java))
+                finish()
+            }else{
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            }
         }
     }
 }
