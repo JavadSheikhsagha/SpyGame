@@ -6,9 +6,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.example.spygame.databinding.ActivityMainBinding
 import com.example.spygame.databinding.ActivityWalktroughBinding
+import com.suddenh4x.ratingdialog.AppRating
+import com.suddenh4x.ratingdialog.preferences.RatingThreshold
 
 class MainActivity : AppCompatActivity() {
      var citizenCounter = 3
@@ -22,6 +25,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+        AppRating.Builder(this)
+            .setMinimumLaunchTimes(5)
+            .setMinimumDays(7)
+            .setMinimumLaunchTimesToShowAgain(5)
+            .setMinimumDaysToShowAgain(10)
+            .setRatingThreshold(RatingThreshold.FOUR)
+            .showIfMeetsConditions()
+
+
+        findViewById<ImageView>(R.id.rate_us).setOnClickListener {
+            AppRating.Builder(this)
+                .showNow()
+        }
 
          var citiIncrease = findViewById<TextView>(R.id.ci)
          var citiDecrease = findViewById<TextView>(R.id.cd)
@@ -71,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        findViewById<Button>(R.id.button5).setOnClickListener {
+        findViewById<Button>(R.id.start_button).setOnClickListener {
             startActivity(Intent(this,RevealActivity::class.java).apply {
                 putExtra("spyC",spyCounter)
                 putExtra("citiC",citizenCounter)
@@ -83,6 +99,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this,InfoActivity::class.java))
             finish()
         }
+
+
+
 
     }
 }

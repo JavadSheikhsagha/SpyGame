@@ -14,8 +14,10 @@
         android:layout_marginHorizontal="12dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".2">
+        app:layout_constraintVertical_bias="0.213">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -43,10 +45,10 @@
                 android:layout_height="130dp"
                 android:layout_marginTop="12dp"
                 android:src="@drawable/img_player"
-                android:tint="#cad1e2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:tint="#cad1e2" />
 
             <TextView
                 android:id="@+id/cd"
@@ -182,10 +184,11 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/start_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.491"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintVertical_bias="0.491">
 
         <TextView
             android:id="@+id/td"
@@ -242,7 +245,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#070F21"
@@ -269,32 +272,25 @@
         app:srcCompat="@drawable/city" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/rate_us"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/shape_playerbackground6"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32"
         app:srcCompat="@drawable/rate" />
 
     <ImageView
         android:id="@+id/info"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_marginStart="257dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="28dp"
-        android:layout_marginBottom="27dp"
         android:background="@drawable/shape_playerbackground6"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/info" />
 
 
